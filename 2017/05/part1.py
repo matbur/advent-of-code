@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-from utils.files import load_column
+from utils.files import load_column_int
 
-MIN = load_column('minimal.txt')
-FULL = load_column('full.txt')
+MIN = load_column_int('minimal.txt')
+FULL = load_column_int('full.txt')
 
 
 def foo(l, verbose=False):
