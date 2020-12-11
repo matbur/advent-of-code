@@ -5,17 +5,17 @@ from typing import Tuple, List
 
 
 def parse(s: str):
-    key, contains = re.findall(r'(\w+ \w+) bags contain (.*)', s)[0]
-    if contains == 'no other bags.':
+    key, contains = re.findall(r"(\w+ \w+) bags contain (.*)", s)[0]
+    if contains == "no other bags.":
         return key, []
     l = []
-    for i in contains.split(', '):
-        quantity, color = re.findall(r'(\d+) (\w+ \w+)', i)[0]
+    for i in contains.split(", "):
+        quantity, color = re.findall(r"(\d+) (\w+ \w+)", i)[0]
         l.append([color, int(quantity)])
     return key, l
 
 
-sg = 'shiny gold'
+sg = "shiny gold"
 
 
 def get_paths(d: List):
@@ -29,7 +29,7 @@ def get_paths(d: List):
                 q.append((v, p + [i]))  # Change to q.append((v, p)) to remove index
 
 
-data = Path('./data1.txt').read_text().splitlines()
+data = Path("./data1.txt").read_text().splitlines()
 
 d = dict([parse(i) for i in data])
 pprint(d)
@@ -68,7 +68,12 @@ def bar(l: List):
 
 
 def bar2(l: List):
-    while path := find_path(l, lambda x: isinstance(x, list) and all(isinstance(i, int) for i in x) and len(x) == 2):
+    while path := find_path(
+        l,
+        lambda x: isinstance(x, list)
+        and all(isinstance(i, int) for i in x)
+        and len(x) == 2,
+    ):
         value = l
         parent = value
         for j in path:
@@ -85,5 +90,5 @@ pprint(q)
 bar2(q)
 pprint(q)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

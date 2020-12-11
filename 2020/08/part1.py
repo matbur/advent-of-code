@@ -1,6 +1,6 @@
 from pathlib import Path
 
-data = Path('./data2.txt').read_text().splitlines()
+data = Path("./data2.txt").read_text().splitlines()
 
 
 def nop(val: int, cir: int, acc: int):
@@ -16,9 +16,9 @@ def jmp(val: int, cir: int, acc: int):
 
 
 cpu = {
-    'nop': nop,
-    'acc': acc,
-    'jmp': jmp,
+    "nop": nop,
+    "acc": acc,
+    "jmp": jmp,
 }
 
 
@@ -39,5 +39,5 @@ while True:
 
 print(acc)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

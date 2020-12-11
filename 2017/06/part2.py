@@ -29,6 +29,6 @@ def bar(l, verbose=False):
     return c - h[tuple(l)]
 
 
-if __name__ == '__main__':
-    print('min', bar(MIN, True))
-    print('full', bar(FULL))
+if __name__ == "__main__":
+    print("min", bar(MIN, True))
+    print("full", bar(FULL))

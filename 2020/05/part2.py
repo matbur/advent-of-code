@@ -11,10 +11,10 @@ def end(minn: int, maxx: int) -> Tuple[int, int]:
 
 
 d = {
-    'L': begin,
-    'R': end,
-    'F': begin,
-    'B': end,
+    "L": begin,
+    "R": end,
+    "F": begin,
+    "B": end,
 }
 
 
@@ -32,12 +32,12 @@ def foo(s: str) -> int:
     return 8 * b + r
 
 
-data = Path('./data2.txt').read_text().split()
+data = Path("./data2.txt").read_text().split()
 
 ids = [foo(i) for i in data]
 for i in ids:
     if i + 2 in ids and i + 1 not in ids:
         print(i + 1)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

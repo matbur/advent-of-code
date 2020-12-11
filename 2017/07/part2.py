@@ -7,7 +7,7 @@ from part1 import MIN, FULL, foo
 def bar2(l, verbose=False):
     d = {}
     for k, *v in l:
-        d[k] = [eval(v[0]), set(i.strip(',') for i in v[2:])]
+        d[k] = [eval(v[0]), set(i.strip(",") for i in v[2:])]
         d[k].append(d[k][0])
 
     f = foo(l)
@@ -24,7 +24,7 @@ def bar2(l, verbose=False):
         if not all_equal(s_):
             dd = list(d[s][1])
             idx, t = find_outsider([d[i][0] for i in dd])
-            if t == 'ma':
+            if t == "ma":
                 return d[dd[idx]][2] - (d[dd[idx]][0] - d[dd[(idx + 1) % len(dd)]][0])
             return d[dd[idx]][2] + (d[dd[(idx + 1) % len(dd)]][0] - d[dd[idx]][0])
         for i in d[s][1]:
@@ -36,7 +36,7 @@ def bar2(l, verbose=False):
 def bar(l, verbose=False):
     d = {}
     for k, *v in l:
-        d[k] = [i.strip(',') for i in v[2:]]
+        d[k] = [i.strip(",") for i in v[2:]]
 
     # f = foo(l)
     for i in d:
@@ -69,13 +69,13 @@ def all_equal(l):
 def find_outsider(l):
     mi = min(l)
     if l.count(mi) == 1:
-        return l.index(mi), 'mi'
+        return l.index(mi), "mi"
     ma = max(l)
     if l.count(ma) == 1:
-        return l.index(ma), 'ma'
+        return l.index(ma), "ma"
     raise ValueError
 
 
-if __name__ == '__main__':
-    print('min', bar(MIN, True))
+if __name__ == "__main__":
+    print("min", bar(MIN, True))
     # print('full', bar(FULL))

@@ -4,8 +4,8 @@ import numpy as np
 
 from utils.files import load_row_int
 
-MIN = load_row_int('minimal.txt')
-FULL = load_row_int('full.txt')
+MIN = load_row_int("minimal.txt")
+FULL = load_row_int("full.txt")
 
 
 def foo(l, verbose=False):
@@ -32,6 +32,6 @@ def foo(l, verbose=False):
     return c
 
 
-if __name__ == '__main__':
-    print('min', foo(MIN, True))
-    print('full', foo(FULL))
+if __name__ == "__main__":
+    print("min", foo(MIN, True))
+    print("full", foo(FULL))

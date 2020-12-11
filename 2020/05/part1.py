@@ -11,10 +11,10 @@ def end(minn: int, maxx: int) -> Tuple[int, int]:
 
 
 d = {
-    'L': begin,
-    'R': end,
-    'F': begin,
-    'B': end,
+    "L": begin,
+    "R": end,
+    "F": begin,
+    "B": end,
 }
 
 
@@ -32,8 +32,8 @@ def foo(s: str) -> int:
     return 8 * b + r
 
 
-data = Path('./data2.txt').read_text().split()
+data = Path("./data2.txt").read_text().split()
 print(max([foo(i) for i in data]))
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

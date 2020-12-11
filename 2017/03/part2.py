@@ -6,14 +6,16 @@ from part1 import foo
 
 
 def bar(n):
-    m = [np.array([1, 0]),
-         np.array([1, 1]),
-         np.array([0, 1]),
-         np.array([-1, 1]),
-         np.array([-1, 0]),
-         np.array([-1, -1]),
-         np.array([0, -1]),
-         np.array([1, -1])]
+    m = [
+        np.array([1, 0]),
+        np.array([1, 1]),
+        np.array([0, 1]),
+        np.array([-1, 1]),
+        np.array([-1, 0]),
+        np.array([-1, -1]),
+        np.array([0, -1]),
+        np.array([1, -1]),
+    ]
     l = {(0, 0): 1}
     for i in range(2, n + 2):
         j = np.array(foo(i))
@@ -25,9 +27,9 @@ def bar(n):
             return s
 
 
-if __name__ == '__main__':
-    print('min')
+if __name__ == "__main__":
+    print("min")
     for i in range(20):
         print(i, bar(i))
 
-    print('full', bar(265149))
+    print("full", bar(265149))

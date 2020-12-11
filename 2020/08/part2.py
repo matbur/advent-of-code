@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List
 
-data = Path('./data2.txt').read_text().splitlines()
+data = Path("./data2.txt").read_text().splitlines()
 
 
 def nop(val: int, cir: int, acc: int):
@@ -17,9 +17,9 @@ def jmp(val: int, cir: int, acc: int):
 
 
 cpu = {
-    'nop': nop,
-    'acc': acc,
-    'jmp': jmp,
+    "nop": nop,
+    "acc": acc,
+    "jmp": jmp,
 }
 
 
@@ -44,16 +44,16 @@ def run(data: List[str]):
 
 def fuzzer(data: List[str]):
     fuzz = {
-        'jmp': 'nop',
-        'nop': 'jmp',
+        "jmp": "nop",
+        "nop": "jmp",
     }
     for i, v in enumerate(data):
         data_copy = data[:]
-        if v.startswith(('jmp', 'nop')):
+        if v.startswith(("jmp", "nop")):
             op, val = parse(v)
             if val == 0:
                 continue
-            data_copy[i] = f'{fuzz[op]} {val}'
+            data_copy[i] = f"{fuzz[op]} {val}"
             yield data_copy
 
 
@@ -64,5 +64,5 @@ for i in fuzzer(data):
         print(acc)
         break
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

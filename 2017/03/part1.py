@@ -25,9 +25,9 @@ def foo2(n):
     return abs(x) + abs(y)
 
 
-if __name__ == '__main__':
-    print('min')
+if __name__ == "__main__":
+    print("min")
     for i in (1, 12, 23, 1024):
         print(i, foo2(i))
 
-    print('full', foo2(265149))
+    print("full", foo2(265149))

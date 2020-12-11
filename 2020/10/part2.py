@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List
 
-data = Path('./data1.txt').read_text().splitlines()
+data = Path("./data1.txt").read_text().splitlines()
 data = [int(i) for i in data]
 data += [0, max(data) + 3]
 data = sorted(data)
@@ -32,8 +32,8 @@ def split(l: List):
     for i in range(1, len(l) - 1):
         if l[i + 1] - l[i - 1] <= 3:
             continue
-        yield l[n:i-1]
-        n = i-1
+        yield l[n : i - 1]
+        n = i - 1
     pass
 
 
@@ -44,7 +44,7 @@ def fuzzer(l: List) -> int:
     n = 0
     bar1 = bar(l)
     for i in bar1:
-        l2 = tuple(l[:i] + l[i + 1:])
+        l2 = tuple(l[:i] + l[i + 1 :])
         cache.add(l2)
         n += 1 + fuzzer(l2)
     return n
@@ -60,5 +60,5 @@ print(data)
 #
 # print(len(cache))
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass
